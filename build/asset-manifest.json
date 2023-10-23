@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.70a3d9b4.css",
-    "main.js": "/static/js/main.040f3d59.js",
+    "main.js": "/static/js/main.876754a4.js",
     "static/media/esf-logo.png": "/static/media/esf-logo.d6033883a2d357de735e.png",
     "static/media/esf-logo-1.png": "/static/media/esf-logo-1.2c6f47ffe3be60bd4013.png",
     "static/media/x.png": "/static/media/x.b1198a3be07e5d469282.png",
@@ -11,10 +11,10 @@
     "static/media/quotes.png": "/static/media/quotes.df253f4297717e73195d.png",
     "index.html": "/index.html",
     "main.70a3d9b4.css.map": "/static/css/main.70a3d9b4.css.map",
-    "main.040f3d59.js.map": "/static/js/main.040f3d59.js.map"
+    "main.876754a4.js.map": "/static/js/main.876754a4.js.map"
   },
   "entrypoints": [
     "static/css/main.70a3d9b4.css",
-    "static/js/main.040f3d59.js"
+    "static/js/main.876754a4.js"
   ]
 }

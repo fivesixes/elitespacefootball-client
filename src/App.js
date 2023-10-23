@@ -1,6 +1,6 @@
-import React, { useEffect, useSelector } from 'react';
+import React, { useEffect } from 'react';
 import { Container, Typography, Button, ThemeProvider, Box } from '@mui/material';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 import AuthForm from './components/AuthForm/AuthForm';
@@ -18,7 +18,6 @@ import FullProfile from './components/FullProfile/FullProfile';
 import SectionHeader from './components/SectionHeader/SectionHeader';
 import AboutSection from './components/AboutSection/AboutSection';
 import AdminControlPanel from './components/AdminControlPanel/AdminControlPanel';
-import SocialMediaLinks from './components/SocialMediaLinks/SocialMediaLinks';
 import VideoContent from './components/VideoContent/VideoContent';
 import ContactUs from './components/ContactUs/ContactUs';
 import Staff from './components/Staff/Staff';
@@ -32,19 +31,12 @@ const responsiveThreshold = 900;
 const App = () => {
 
   const dispatch = useDispatch();
-  const entries = useSelector((state) => state.entries);
 
   useEffect(() => {
-    const cachedData = localStorage.getItem('entries');
+    
+    dispatch(getEntries());
 
-    if (!entries.length && !cachedData) {
-      dispatch(getEntries());
-    }
-  }, [dispatch, entries]);
-
-  useEffect(() => {
-    localStorage.setItem('entries', JSON.stringify(entries));
-  }, [entries]);
+  }, [ dispatch ]);
 
   return(
     <div className="App">

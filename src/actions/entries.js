@@ -6,6 +6,9 @@ export const getEntries = () => async (dispatch) => {
   try {
     const { data } = await api.fetchEntries();
 
+    localStorage.setItem('entries', JSON.stringify(data));
+    console.log(`retrieved data - ${data}`);
+
     dispatch( { type: FETCH_ALL, payload: data } ) ;
   }
   catch (error) {
