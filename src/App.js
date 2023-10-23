@@ -32,12 +32,19 @@ const responsiveThreshold = 900;
 const App = () => {
 
   const dispatch = useDispatch();
+  const entries = useSelector((state) => state.entries);
 
   useEffect(() => {
+    const cachedData = localStorage.getItem('entries');
 
-    dispatch(getEntries());
-    
-  }, [dispatch] );
+    if (!entries.length && !cachedData) {
+      dispatch(getEntries());
+    }
+  }, [dispatch, entries]);
+
+  useEffect(() => {
+    localStorage.setItem('entries', JSON.stringify(entries));
+  }, [entries]);
 
   return(
     <div className="App">
@@ -48,7 +55,7 @@ const App = () => {
               <>
                 { window.innerWidth < responsiveThreshold ?  <AltNav/> : <MainHeader selected="HOME"/> }
                 { window.innerWidth < responsiveThreshold ? 
-                  <AnimatedHeader animated={true} variant="h6" style={ { margin: '60px 0px 20px 0px', textAlign: 'center', color: 'white', textTransform: 'uppercase', fontWeight: 'bold'}}/> 
+                  <AnimatedHeader animated={true} variant="h6" style={ { margin: '60px 0px 20px 0px', textAlign: 'center', color: 'white', textTransform: 'uppercase'}}/> 
                   : 
                   <AnimatedHeader animated={true} variant="h3" style={ { margin: '100px 0px 20px 0px', textAlign: 'center', color: 'white', textTransform: 'uppercase', fontWeight: 'bold'}}/> }
                 <PlayerCards />
