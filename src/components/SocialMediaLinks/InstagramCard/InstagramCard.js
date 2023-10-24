@@ -9,7 +9,7 @@ export default function InstagramCard() {
   }
 
   return (
-    <Button disableElevation onClick={handleClick} variant="text" sx={ {border: '2px solid green', color: 'white', padding: '40px', '&:hover': { backgroundColor: 'palevioletred', color: 'white', opacity: '.7' }} }>
+    <Button disableElevation onClick={handleClick} variant="text" sx={ {color: 'white', padding: '40px', '&:hover': { backgroundColor: 'palevioletred', color: 'white', opacity: '.7' }} }>
       <Grid container justifyContent="center" alignContent="center" rowSpacing={1} sx={ {width: '80px'} }>
         <Grid item>
           <Instagram sx={ { height: '50px', width: '50px' } }/>

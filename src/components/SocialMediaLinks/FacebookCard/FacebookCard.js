@@ -10,7 +10,7 @@ export default function FacebookCard() {
 
   return (
     <a style={{all: 'unset'}}>
-      <Button disableElevation onClick={handleClick} variant="text" sx={ {border: '2px solid green', color: 'white', padding: '40px', '&:hover': { backgroundColor: '#3b5998', color: 'white', opacity: '.7' }} }>
+      <Button disableElevation onClick={handleClick} variant="text" sx={ {color: 'white', padding: '40px', '&:hover': { backgroundColor: '#3b5998', color: 'white', opacity: '.7' }} }>
         <Grid container justifyContent="center" alignContent="center" rowSpacing={1} sx={ {width: '80px'} }>
           <Grid item>
             <Facebook sx={ { height: '50px', width: '50px' } }/>

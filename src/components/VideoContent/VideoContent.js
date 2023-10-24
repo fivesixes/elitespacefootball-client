@@ -56,7 +56,7 @@ export default function VideoContent({videoTitle, description, videoId, responsi
     <Grid container justifyContent="center" alignContent="center" sx={{ ...styles.main, display: 'flex', flexDirection: 'column', transition: 'transform 1s ease', '&:hover': { transform: 'scale(1.01)' } }}>
       <Grid item xs={12}>
         <Box sx={ { margin: '10px 0px 10px 0px', textAlign: 'center', minHeight: 235 / 1.5, minWidth: 450 / 1.5 } }>
-          { <YouTube videoId={videoId} opts={handleOptsResponsiveness()} style={{border: '2px solid green'}}/> || <YoutubeCard style={ { margin: '30px', } } /> }
+          { <YouTube videoId={videoId} opts={handleOptsResponsiveness()} style={{border: '2px solid green', textAlign: 'center'}}/> || <YoutubeCard style={ { margin: '30px', } } /> }
         </Box>
       </Grid>
       <Grid item xs={12} sx={ { display: 'flex', alignContent: 'center', justifyContent: 'center' } }>

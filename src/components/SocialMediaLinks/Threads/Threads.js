@@ -10,7 +10,7 @@ export default function Threads() {
   }
 
   return (
-    <Button disableElevation onClick={handleClick} variant="text" sx={ {border: '2px solid green', color: 'white', padding: '40px', '&:hover': { backgroundColor: 'black', color: 'white', opacity: '.7' }} }>
+    <Button disableElevation onClick={handleClick} variant="text" sx={ {color: 'white', padding: '40px', '&:hover': { backgroundColor: 'black', color: 'white', opacity: '.7' }} }>
       <Grid container justifyContent="center" alignContent="center" rowSpacing={1} sx={ {width: '80px'} }>
         <Grid item>
           <img src={threads} alt="Threads Icon" style={ {width: '50px', height: '50px'} }/>

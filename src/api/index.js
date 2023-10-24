@@ -1,8 +1,7 @@
 import axios from 'axios';
 
 const instance = axios.create({
-  baseURL: 'https://elitespacefootball-server-3a23b2847871.herokuapp.com',
-  withCredentials: true,
+  baseURL: 'https://elitespacefootball-server-3a23b2847871.herokuapp.com'
 });
 
 export const fetchEntry = (id) => instance.get(`/academy/roster/${id}`);

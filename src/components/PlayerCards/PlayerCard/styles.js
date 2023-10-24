@@ -48,7 +48,8 @@ const styles = {
     textDecoration: 'none',
     color: 'black',
     fontSize: '12px',
-    fontFamily: 'roboto'
+    fontFamily: 'roboto',
+    marginBottom: '15px'
   }
 }
 

@@ -11,13 +11,25 @@ import ProfileVideos from '../ProfileVideos/ProfileVideos';
 import theme from '../theme';
 import PlayerPassportPhoto from '../PlayerPassportPhoto/PlayerPassportPhoto';
 import PlayerMediaLink from '../PlayerMediaLink/PlayerMediaLink';
+import { getEntry } from '../../actions/entries';
 
 export default function FullProfile( { responsiveThreshold } ) {
+
+  const dispatch = useDispatch();
 
   const { id } = useParams(); 
   const entries = useSelector((state) => state.entries);
 
   const entry = entries.length? entries[0].find((player) => player._id === id) : undefined;
+
+  useEffect(() => {
+
+    if (!entry) {
+      dispatch(getEntry(id));
+    }
+    
+
+  }, [ dispatch, id ]);
 
   const formatDate = (dateString) => {
     const options = { year: 'numeric', month: 'long', day: 'numeric' };
