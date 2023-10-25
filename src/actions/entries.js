@@ -17,8 +17,8 @@ export const getEntries = () => async (dispatch) => {
 export const getEntry = (id) => async (dispatch) => {
 
   try {
-    const { data } = await api.fetchEntry(id);
-
+    const { data } = api.fetchEntry(id);
+    console.log(data);
     dispatch( { type: FETCH_ENTRY, payload: data } ) ;
   }
   catch (error) {

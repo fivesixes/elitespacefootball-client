@@ -12,7 +12,7 @@ export default function ProfileDataUnit(props) {
     case 'BASIC':
       return ( 
         <Box justifyContent="center" alignContent="center" style={{...styles.main, textTransform: 'capitalize'}}>
-          <CustomTypography text={props.fieldName} style={ { fontSize: '10px', color: '#999999' } } />
+          <CustomTypography text={props.fieldName} style={ { fontSize: '15px', color: '#999999' } } />
           <CustomTypography text={props.value} style={ { fontSize: '25px', fontWeight: 'bold' } } />
         </Box>
       );
@@ -34,7 +34,7 @@ export default function ProfileDataUnit(props) {
     case 'EMPHATIC':
       return ( 
         <Box justifyContent="center" alignContent="center" style={styles.main}>
-          <CustomTypography text={props.fieldName} style={ { fontSize: '10px', color: '#999999' } } />
+          <CustomTypography text={props.fieldName} style={ { fontSize: '15px', color: '#999999' } } />
           <CustomTypography text={props.value} style={ { fontSize: '25px', fontWeight: 'bold' } } />
         </Box>
       );
@@ -44,7 +44,7 @@ export default function ProfileDataUnit(props) {
       
       return (
         <Box justifyContent="center" alignContent="center" style={styles.main}>
-          <CustomTypography text={props.fieldName} style={ { fontSize: '10px', color: '#999999' } } />
+          <CustomTypography text={props.fieldName} style={ { fontSize: '15px', color: '#999999' } } />
           <ReadMore text={props.value} maxLength={maxLength} style={ { color: 'black', cursor: 'pointer', fontWeight: 'bold' } } mainTextStyle={ { maxWidth: '100%' } }/>
         </Box>
       );

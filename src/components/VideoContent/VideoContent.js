@@ -56,7 +56,7 @@ export default function VideoContent({videoTitle, description, videoId, responsi
     <Grid container justifyContent="center" alignContent="center" sx={{ ...styles.main, display: 'flex', flexDirection: 'column', transition: 'transform 1s ease', '&:hover': { transform: 'scale(1.01)' } }}>
       <Grid item xs={12}>
         <Box sx={ { margin: '10px 0px 10px 0px', textAlign: 'center', minHeight: 235 / 1.5, minWidth: 450 / 1.5 } }>
-          { <YouTube videoId={videoId} opts={handleOptsResponsiveness()} style={{border: '2px solid green', textAlign: 'center'}}/> || <YoutubeCard style={ { margin: '30px', } } /> }
+          { <YouTube videoId={videoId} opts={handleOptsResponsiveness()} style={{borderRadius: '10px', textAlign: 'center', padding: '5px'}}/> || <YoutubeCard style={ { margin: '30px', } } /> }
         </Box>
       </Grid>
       <Grid item xs={12} sx={ { display: 'flex', alignContent: 'center', justifyContent: 'center' } }>
@@ -66,8 +66,7 @@ export default function VideoContent({videoTitle, description, videoId, responsi
               { window.innerWidth < responsiveThreshold ? <></> : <TypingText><Typography variant={window.innerHeight < responsiveThreshold ? 'body1' : 'h6'} sx={ { fontWeight: 'light' } }>{description}</Typography></TypingText>}
             </Box>
             <Box sx={ {textAlign: 'center'} }>
-              <Button disableElevation variant="contained" onClick={handleWatchMore} sx={ { color: 'white', backgroundColor: 'red', margin: '20px', '&:hover': { color: 'red', backgroundColor: 'white'} } }><Typography variant="h6">Watch More</Typography></Button>
-              <Button disableElevation variant="contained" onClick={handleSubscribe} sx={ { color: 'white', backgroundColor: 'red', margin: '20px', '&:hover': { color: 'red', backgroundColor: 'white'} } }><Typography variant="h6">Subscribe</Typography></Button>
+              <Button disableElevation variant="contained" onClick={handleWatchMore} sx={ { color: 'white', backgroundColor: '#dc3326', margin: '20px', '&:hover': { color: '#dc3326', backgroundColor: 'white'} } }><Typography variant="h6">Visit our channel</Typography></Button>
             </Box>
         </Box>
       </Grid>

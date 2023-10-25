@@ -40,14 +40,14 @@ const App = () => {
 
   return(
     <div className="App">
-      <Container maxWidth="lg">
+      <Container maxWidth="lg" sx={{padding: '5px'}}>
         <Router>
           <Routes>
             <Route path="/" element={
               <>
                 { window.innerWidth < responsiveThreshold ?  <AltNav/> : <MainHeader selected="HOME"/> }
                 { window.innerWidth < responsiveThreshold ? 
-                  <AnimatedHeader animated={true} variant="h6" style={ { margin: '60px 0px 20px 0px', textAlign: 'center', color: 'white', textTransform: 'uppercase'}}/> 
+                  <AnimatedHeader animated={true} variant="h6" style={ { margin: '130px 0px 20px 0px', textAlign: 'center', color: 'white', textTransform: 'uppercase'}}/> 
                   : 
                   <AnimatedHeader animated={true} variant="h3" style={ { margin: '100px 0px 20px 0px', textAlign: 'center', color: 'white', textTransform: 'uppercase', fontWeight: 'bold'}}/> }
                 <PlayerCards />

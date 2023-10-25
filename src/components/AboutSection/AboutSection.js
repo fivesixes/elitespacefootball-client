@@ -8,7 +8,7 @@ import altQuotesIcon from './altQuotes.png'
 export default function( { responsiveThreshold } ) {
 
   return(
-    <Box alignContent="center" justifyContent="center" style={ { ...styles.main, backgroundColor: window.innerWidth < responsiveThreshold ? '#dedede' : 'white', padding: window.innerWidth < responsiveThreshold ? '0px' : '50px', color: 'black' } }>
+    <Box alignContent="center" justifyContent="center" style={ { ...styles.main, backgroundColor: window.innerWidth < responsiveThreshold ? '#dedede' : 'white', padding: window.innerWidth < responsiveThreshold ? '13px' : '50px', color: 'black', ...window.innerWidth < responsiveThreshold ? { marginTop: '130px' } : {} } }>
         <Typography variant={window.innerWidth < responsiveThreshold ? 'h4' : 'h3'} sx={ {margin: '30px 0px 0px 0px', fontWeight: 'bold'} }>Overview</Typography>
         <Typography variant="body1" sx={ { textAlign: 'left', fontSize: '18px', marginBottom: '70px' } }>
           <p>

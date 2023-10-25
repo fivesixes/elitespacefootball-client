@@ -64,7 +64,7 @@ export default function MobileNavigationMenu() {
 
   return (
     <ThemeProvider theme={theme}>
-      <Box sx={ { display: 'flex', flexDirection: 'row', justifyContent: 'space-between', marginTop: '30px' } }>
+      <Box sx={ { display: 'flex', flexDirection: 'row', justifyContent: 'space-between', width: '92%', marginTop: '30px', position: 'fixed', zIndex: '2', top: '0', backgroundColor: '#dedede', padding: '10px', borderRadius: '5px' } }>
         <ThemeProvider theme={theme}><Button variant="text" onClick={ () => navigate('/') }><MainLogo style={ {width: `${(100/1.3).toString()}px`, height: `${(35/1.3).toString()}px`} }/></Button></ThemeProvider>
         <ThemeProvider theme={theme}>
           <IconButton

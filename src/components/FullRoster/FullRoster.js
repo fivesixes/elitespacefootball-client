@@ -16,7 +16,7 @@ export default function FullRoster( { editMode, alumni, responsiveThreshold } ) 
     <>
     {
       window.innerWidth < responsiveThreshold ?
-      <Grid container style={ { display: 'flex', flexDirection: 'column' } }>
+      <Grid container style={ { display: 'flex', flexDirection: 'column', ...window.innerWidth < responsiveThreshold ? { marginTop: '70px' } : {} } }>
         <Grid item sx={ {width: '100%', textAlign: 'center'} }>
           <SectionHeader text="ROSTER" custom={true} style={styles.sectionHeader} />
         </Grid>
@@ -29,7 +29,7 @@ export default function FullRoster( { editMode, alumni, responsiveThreshold } ) 
         ))}
       </Grid> 
       :
-       <Grid container style={ {...styles.main, paddingBottom: '200px'} }>
+       <Grid container style={ {...styles.main, paddingBottom: '50px'} }>
          <Grid item sx={ {width: '100%', textAlign: 'center'} }>
            <SectionHeader text="ROSTER" custom={true} style={styles.sectionHeader} />
          </Grid>

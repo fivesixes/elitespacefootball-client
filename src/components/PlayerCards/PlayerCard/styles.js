@@ -1,6 +1,6 @@
 const styles = {
   main: {
-    height: '400px',
+    height: '420px',
     width: '280px',
     borderRadius: '40px',
     border: '2px solid green',
@@ -14,7 +14,7 @@ const styles = {
   },
 
   cardContent: {
-    padding: '0px 0px 25% 0px',
+    padding: '0px 0px 0px 0px',
     margin: '0px',
     backgroundColor: '#cbff99'
   },
@@ -35,7 +35,7 @@ const styles = {
 
   button: {
     padding: '12px 30px 12px 30px',
-    marginBottom: '15px',
+    marginBottom: '10px',
     backgroundColor: 'red',
     fontSize: '12px',
     maxWidth: '120px',
@@ -49,7 +49,7 @@ const styles = {
     color: 'black',
     fontSize: '12px',
     fontFamily: 'roboto',
-    marginBottom: '15px'
+    marginBottom: '25px'
   }
 }
 

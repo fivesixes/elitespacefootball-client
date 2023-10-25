@@ -79,7 +79,7 @@ export default function ContactUs( { responsiveThreshold } ) {
   }
 
   return (
-    <Grid container sx={{display: 'flex', flexDirection: 'column', ...styles.main}}>
+    <Grid container sx={{display: 'flex', flexDirection: 'column', ...styles.main, ...window.innerWidth < responsiveThreshold ? { marginTop: '130px', padding: '13px' } : {}}}>
         <Grid item sx={{display: 'flex', flexDirection: 'row'}}>
           {menuItems.map((item, index) => (
             <Paper
