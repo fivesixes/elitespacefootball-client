@@ -25,7 +25,7 @@ export default function MainCarousel({ rosterEntries }) {
   }
 
   return (
-    <Carousel navButtonsAlwaysVisible animation="slide" sx={styles.main}>
+    <Carousel animation="slide" sx={styles.main}>
       {cardComponents}
     </Carousel>
   );

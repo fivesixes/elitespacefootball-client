@@ -1,5 +1,5 @@
 import * as api from '../api';
-import { CREATE, UPDATE, DELETE, FETCH_ALL, FETCH_ENTRY } from '../constants/actionTypes';
+import { CREATE, UPDATE, DELETE, FETCH_ALL, FETCH_ENTRY, API_ERROR } from '../constants/actionTypes';
 
 export const getEntries = () => async (dispatch) => {
 
@@ -9,7 +9,7 @@ export const getEntries = () => async (dispatch) => {
     dispatch( { type: FETCH_ALL, payload: data } ) ;
   }
   catch (error) {
-    console.log(error.message);
+    dispatch({type: API_ERROR, payload: error});
   }
 
 }
@@ -17,12 +17,12 @@ export const getEntries = () => async (dispatch) => {
 export const getEntry = (id) => async (dispatch) => {
 
   try {
-    const { data } = api.fetchEntry(id);
+    const { data } = await api.fetchEntry(id);
     console.log(data);
     dispatch( { type: FETCH_ENTRY, payload: data } ) ;
   }
   catch (error) {
-    console.log(error.message);
+    dispatch({type: API_ERROR, payload: error});
   }
 
 }
@@ -30,12 +30,12 @@ export const getEntry = (id) => async (dispatch) => {
 export const createEntry = (entry) => async (dispatch) => {
 
   try {
-    const { data } = api.createEntry(entry);
+    const { data } = await api.createEntry(entry);
 
-    dispatch( { type: CREATE, payload: data } ) ;
+    dispatch( { type: CREATE, payload: data } );
   }
   catch (error) {
-    console.log(error);
+    dispatch({type: API_ERROR, payload: error});
   }
 
 }
@@ -48,7 +48,7 @@ export const updateEntry = (id, entry) => async (dispatch) => {
     dispatch({ type: UPDATE, payload: data });
   }
   catch (error) {
-    console.log(error.message);
+    dispatch({type: API_ERROR, payload: error});
   }
 }
 
@@ -60,6 +60,6 @@ export const deleteEntry = (id) => async (dispatch) => {
     dispatch( { type: DELETE, payload: id } );
   }
   catch (error) {
-    console.log(error.message);
+    dispatch({type: API_ERROR, payload: error});
   }
 }

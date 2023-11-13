@@ -13,9 +13,8 @@ import ProfileVideos from '../ProfileVideos/ProfileVideos';
 import theme from '../theme';
 import PlayerPassportPhoto from '../PlayerPassportPhoto/PlayerPassportPhoto';
 import PlayerMediaLink from '../PlayerMediaLink/PlayerMediaLink';
-import { getEntry } from '../../actions/entries';
 import { Warning } from '@mui/icons-material';
-
+import { _baseURL } from '../../constants/endpoints';
 
 export default function FullProfile( { responsiveThreshold } ) {
 
@@ -26,7 +25,7 @@ export default function FullProfile( { responsiveThreshold } ) {
   useEffect(() => {
     async function fetchEntry() {
       try {
-        const response = await fetch(`http://localhost:5000/academy/roster/${id}`);
+        const response = await fetch(`${_baseURL}/academy/roster/${id}`);
         if (!response.ok) {
           throw new Error('Network response was not ok');
         }
@@ -76,7 +75,7 @@ export default function FullProfile( { responsiveThreshold } ) {
       {
         window.innerWidth < responsiveThreshold ?
         !entry ? <ThemeProvider theme={theme}><Box sx={ { minHeight: '300px', textAlign: 'center' } }><CircularProgress sx={ { marginTop: '200px' } }/><Typography variant="h6" sx={ { margin: '30px'} }>Loading profile...</Typography></Box></ThemeProvider> :
-        <Grid container sx={ { display: 'flex', flexDirection: 'column', ...window.innerWidth < responsiveThreshold ? { marginTop: '130px', padding: '13px' } : {} } }>
+        <Grid container sx={ { display: 'flex', flexDirection: 'column', ...window.innerWidth < responsiveThreshold ? { marginTop: '30px', padding: '13px' } : {} } }>
           <Grid item justifyContent="center" alignContent="center">
             <PlayerPassportPhoto imgURL={entry.passportPhoto} alt={`${entry.firstName} photo`} style={ { margin: '15px' } }/>
           </Grid>

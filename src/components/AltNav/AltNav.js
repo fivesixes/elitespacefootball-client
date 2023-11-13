@@ -7,7 +7,7 @@ import ExpandLessIcon from '@mui/icons-material/ExpandLess';
 import theme from '../theme';
 import MainLogo from '../MainLogo/MainLogo';
 
-export default function MobileNavigationMenu() {
+export default function AltNav() {
   const [open, setOpen] = useState(false);
   const [academyOpen, setAcademyOpen] = useState(false);
   const navigate = useNavigate();
@@ -64,8 +64,8 @@ export default function MobileNavigationMenu() {
 
   return (
     <ThemeProvider theme={theme}>
-      <Box sx={ { display: 'flex', flexDirection: 'row', justifyContent: 'space-between', width: '92%', marginTop: '30px', position: 'fixed', zIndex: '2', top: '0', backgroundColor: '#dedede', padding: '10px', borderRadius: '5px' } }>
-        <ThemeProvider theme={theme}><Button variant="text" onClick={ () => navigate('/') }><MainLogo style={ {width: `${(100/1.3).toString()}px`, height: `${(35/1.3).toString()}px`} }/></Button></ThemeProvider>
+      <Box sx={ { display: 'flex', flexDirection: 'row', justifyContent: 'space-between', width: '97%', marginTop: '30px', position: 'sticky', zIndex: '4', top: '0px', backgroundColor: '#dedede', padding: '10px', borderRadius: '5px' } }>
+        <ThemeProvider theme={theme}><Button variant="text" onClick={ () => handleMenuItemClick('HOME') }><MainLogo style={ {width: `${(100/1.3).toString()}px`, height: `${(35/1.3).toString()}px`} }/></Button></ThemeProvider>
         <ThemeProvider theme={theme}>
           <IconButton
             onClick={() => toggleDrawer(true)}

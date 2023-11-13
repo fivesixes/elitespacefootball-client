@@ -12,7 +12,7 @@ import styles from "./styles";
 
 export default function MainNav(props) {
 
-  const items = ['HOME', 'ABOUT', 'CONTACT US', 'ACADEMY']; // Added 'HOME' option
+  const items = ['HOME', 'ABOUT', 'CONTACT US', 'ACADEMY'];
   const [anchorEl, setAnchorEl] = useState(null);
 
   const navigate = useNavigate();
@@ -26,34 +26,41 @@ export default function MainNav(props) {
   };
 
   const handleHomeClick = () => {
+    scrollTo(0,0);
     navigate('/');
   }
 
   const handleAboutclick = () => {
+    scrollTo(0,0);
     navigate('/about');
   }
 
   const handleContactUsclick = () => {
+    scrollTo(0,0);
     navigate('/contactus');
   }
 
   const handleRosterClick = () => {
     handleAcademyClose();
+    scrollTo(0,0);
     navigate('/academy/roster');
   }
 
   const handleStaffClick = () => {
     handleAcademyClose();
+    scrollTo(0,0);
     navigate('/academy/staff');
   }
 
   const handleAlumniClick = () => {
     handleAcademyClose();
+    scrollTo(0,0);
     navigate('/academy/alumni');
   }
 
   const handleEnrollmentClick = () => {
     handleAcademyClose();
+    scrollTo(0,0);
     navigate('/academy/enrollment');
   }
 

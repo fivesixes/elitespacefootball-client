@@ -1,5 +1,5 @@
 import { Typography } from "@mui/material";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { styled, keyframes} from '@mui/system';
 
 const typingAnimation = keyframes`
@@ -20,15 +20,6 @@ const fadeInAnimation = keyframes`
   }
 `;
 
-const fadeOutAnimation = keyframes`
-  0% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-  }
-`;
-
 const TypingText = styled('div')`
   overflow: hidden;
   white-space: nowrap;
@@ -40,12 +31,14 @@ const FadingText = styled('div')`
 `;
 
 export default function CustomTypography(props) {
-
+  const componentRef = useRef(null);
+  const [isVisible, setIsVisible] = useState(false);
   const [textIndex, setTextIndex] = useState(0);
+
   const texts = [
     props.text,
     "Don't miss anything",
-    "Check out our channel now",
+    "See what's new on our channel",
   ];
 
   useEffect(() => {
@@ -60,19 +53,40 @@ export default function CustomTypography(props) {
     return () => clearTimeout(timer);
   }, [textIndex]);
 
+  useEffect(() => {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          observer.disconnect();
+        }
+      });
+    });
+
+    observer.observe(componentRef.current);
+
+    return () => {
+      observer.disconnect();
+    };
+  }, []);
+
   return (
-    <Typography variant={props.variant} sx={ props.style }>
-      {props.animated ? <div>
-      {textIndex === 0 && (
-        <TypingText>{texts[0]}</TypingText>
-      )}
-      {textIndex === 1 && (
-        <FadingText>{texts[1]}</FadingText>
-      )}
-      {textIndex === 2 && (
-        <div>{texts[2]}</div>
-      )}
-    </div> : props.text}
-    </Typography>
+    <div ref={componentRef}>
+      {
+      <Typography variant={props.variant} sx={ props.style }>
+        {props.animated ? <div>
+        {textIndex === 0 && (
+          isVisible && <TypingText>{texts[0]}</TypingText>
+        )}
+        {textIndex === 1 && (
+          isVisible && <FadingText>{texts[1]}</FadingText>
+        )}
+        {textIndex === 2 && (
+          isVisible && <div>{texts[2]}</div>
+        )}
+      </div> : props.text}
+      </Typography>
+      }
+    </div>
   );
-}
+};

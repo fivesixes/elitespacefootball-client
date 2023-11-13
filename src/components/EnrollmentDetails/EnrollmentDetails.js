@@ -6,7 +6,7 @@ import { Box, Typography } from '@mui/material';
 export default function EnrollmentDetails( { responsiveThreshold } ) {
 
   return (
-    <Box sx={{...styles.main, backgroundColor: window.innerWidth < responsiveThreshold ? '#dedede' : 'white', padding: window.innerWidth < responsiveThreshold ? '13px' : '50px', ...window.innerWidth < responsiveThreshold ? { marginTop: '130px' } : {}}}>
+    <Box sx={{...styles.main, backgroundColor: window.innerWidth < responsiveThreshold ? '#dedede' : 'white', padding: window.innerWidth < responsiveThreshold ? '13px' : '50px', ...window.innerWidth < responsiveThreshold ? { marginTop: '30px' } : {}}}>
       <Typography variant={window.innerWidth < responsiveThreshold ? 'h4' : 'h3'} sx={ { textAlign: 'center', margin: '30px 0px 30px 0px', fontWeight: 'bold' } }>
         Enrollment
       </Typography>

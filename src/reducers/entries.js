@@ -1,4 +1,4 @@
-import { CREATE, UPDATE, DELETE, FETCH_ALL, FETCH_ENTRY } from "../constants/actionTypes";
+import { CREATE, UPDATE, DELETE, FETCH_ALL, FETCH_ENTRY, API_ERROR } from "../constants/actionTypes";
 
 export default ( entries = [], action ) => {
 
@@ -17,6 +17,9 @@ export default ( entries = [], action ) => {
 
     case DELETE:
       return entries.filter( (entry) => entry._id !== action.payload );
+    
+    case API_ERROR:
+      return {...entries, error: action.payload};
 
     default:
       return entries;

@@ -6,7 +6,8 @@ const styles = {
     marginRight: '15%',
     maxWidth: '50%',
     color: 'green',
-    justifyContent: 'center'
+    justifyContent: 'center',
+    boxShadow: '0px 1px 1px 0px #777'
   },
 
   navButton: {
@@ -14,7 +15,6 @@ const styles = {
     fontSize: 'inherit',
     whiteSpace: 'nowrap',
     borderRadius: '0px',
-    borderBottom: '4px solid green',
     flex: '1'
   },
 

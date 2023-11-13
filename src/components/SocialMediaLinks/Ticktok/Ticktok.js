@@ -6,7 +6,7 @@ import tickTock from './ticktok.png';
 export default function Ticktok() {
 
   const handleClick = () => {
-    window.location.href = 'https://www.ticktok.com/elitespacefootball';
+    window.location.href = 'https://www.tiktok.com/elitespacefootball';
   }
 
   return (

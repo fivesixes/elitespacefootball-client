@@ -1,6 +1,7 @@
 const styles = {
   main: {
     paddingTop: '20px',
+    width: '100%'
   },
 
   icons: {

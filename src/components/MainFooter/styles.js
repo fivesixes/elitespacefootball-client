@@ -6,6 +6,7 @@ const styles = {
     backgroundColor: 'green',
     color: 'white',
     bottom: '0',
+    zIndex: '0'
   }
 }
 
